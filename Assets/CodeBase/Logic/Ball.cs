@@ -46,7 +46,7 @@ namespace CodeBase.Logic
                 {
                     float width = hit2D.collider.bounds.extents.x;
                     float x = (transform.position.x - hit2D.collider.bounds.center.x) / width;
-                    Direction = new Vector2(x, 1f);
+                    Direction = new Vector2((Direction.x + x) / 2, 1f);
                 }
                 
                 moveOffset = Direction.normalized * (Speed - hit2D.distance) + hit2D.normal * 0.1f;
